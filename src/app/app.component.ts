@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-// import {Customer} from './customer';
- import {CUSTOMERS} from "./mock-data";
+import {Component} from '@angular/core';
+import {Customer} from './customer';
+import {CUSTOMERS} from "./mock-data";
 
 @Component({
   selector: 'app-root',
@@ -9,19 +9,18 @@ import { Component } from '@angular/core';
   <div class="panel-heading"><h1 style="text-align:center">Vartojimo paskolos</h1></div>
   
 
-<table class="table">
+<table class="table table-striped" >
   <thead class="thead-inverse">
   <tr>
     <th>Suma</th>
     <th>Vartotojas</th>
     <th>Statusas</th>
     <th>Data</th>
-    <th>Pakeisti statusa</th>
     
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let customer of Customers">
+  <tr *ngFor="let customer of Customers" (click) = "onSelect(customer)">
     <td  >
       {{customer.loan}}
     </td>    
@@ -31,12 +30,10 @@ import { Component } from '@angular/core';
     <td  >
       {{customer.status}}
     </td>    
-    <td  >
+    <td  >  
       {{customer.date}}
     </td>
-    <button>
-      Pakeisti statusa
-    </button>
+
   </tr>  
 
   </tbody>
@@ -44,23 +41,22 @@ import { Component } from '@angular/core';
 </div>
 
 
+<div *ngIf="selectedCustomer">
+  <h1>Kliento duomenys:</h1>
+  <h2>{{selectedCustomer.name}}</h2>
+  <div><label>Suma: </label> €{{selectedCustomer.loan}}</div>
+  <div><label>Grynosios mėnesio pajamos: </label> €{{selectedCustomer.income}}</div>
+  <div><label>Statusas: </label>{{selectedCustomer.status}}</div>
+  
+  <button (click)="acceptLoan()">
+    Patvirtinti
+  </button>
+  <button (click)="declineLoan()">
+    Atmesti
+  </button>
+</div>
 
-<h1>Kliento duomenys:</h1>
-<h2>{{klientas.vardas}}</h2>
-<div><label>Suma: </label>{{klientas.suma}}</div>
-<div><label>Statusas: </label>{{klientas.statusas}}</div>
- <!--<div>-->
-    <!--<label>Statusas: </label>-->
-    <!--<input [(ngModel)]="klientas.statusas" placeholder="accepted">-->
-<!--</div>-->
 
-
-<button (click)="acceptLoan()">
-  Patvirtinti
-</button>
-<button (click)="declineLoan()">
-  Atmesti
-</button>
 
 <hr>
 <div class="panel panel-default">
@@ -72,28 +68,24 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   Customers = CUSTOMERS;
-  klientas : Klientas = {
-    suma: 3000,
-    vardas: "Tomas Martinkėnas",
-    statusas: "Nepatikrinta"
-  }
+
+  selectedCustomer: Customer;
 
 
   acceptLoan() {
-    this.klientas.statusas = "Patvirtina"
+    this.selectedCustomer.status = "Patvirtina"
   }
 
   declineLoan() {
-    this.klientas.statusas = "Atmesta"
+    this.selectedCustomer.status = "Atmesta"
   }
 
+  onSelect(customer: Customer): void {
+    this.selectedCustomer = customer;
+  }
 
 }
 
 
-export class Klientas {
-  suma : number;
-  vardas : String;
-  statusas: String;
-}
+
 

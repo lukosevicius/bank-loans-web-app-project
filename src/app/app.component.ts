@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
   template: `
 <div class="panel panel-default">
   <div class="panel-heading"><h1 style="text-align:center">Vartojimo paskolos</h1></div>
+  
 
 <table class="table">
   <thead class="thead-inverse">
@@ -42,14 +43,29 @@ import { Component } from '@angular/core';
 </table>
 </div>
 
+
+
 <h1>Kliento duomenys:</h1>
 <h2>{{klientas.vardas}}</h2>
 <div><label>Suma: </label>{{klientas.suma}}</div>
- <div>
-    <label>Suma: </label>
-    <input [(ngModel)]="klientas.suma" placeholder="accepted">
-</div>
+<div><label>Statusas: </label>{{klientas.statusas}}</div>
+ <!--<div>-->
+    <!--<label>Statusas: </label>-->
+    <!--<input [(ngModel)]="klientas.statusas" placeholder="accepted">-->
+<!--</div>-->
 
+
+<button (click)="acceptLoan()">
+  Patvirtinti
+</button>
+<button (click)="declineLoan()">
+  Atmesti
+</button>
+
+<hr>
+<div class="panel panel-default">
+  <div class="panel-footer"><h1 style="text-align:center"></h1></div>
+</div>
 
 `,
   styleUrls: ['./app.component.css']
@@ -58,12 +74,26 @@ export class AppComponent {
   Customers = CUSTOMERS;
   klientas : Klientas = {
     suma: 3000,
-    vardas: "Tomas Martinkėnas"
+    vardas: "Tomas Martinkėnas",
+    statusas: "Nepatikrinta"
   }
+
+
+  acceptLoan() {
+    this.klientas.statusas = "Patvirtina"
+  }
+
+  declineLoan() {
+    this.klientas.statusas = "Atmesta"
+  }
+
+
 }
+
 
 export class Klientas {
   suma : number;
   vardas : String;
+  statusas: String;
 }
 

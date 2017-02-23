@@ -15,6 +15,8 @@ import { Component } from '@angular/core';
     <th>Vartotojas</th>
     <th>Statusas</th>
     <th>Data</th>
+    <th>Change status</th>
+    
   </tr>
   </thead>
   <tbody>
@@ -31,6 +33,9 @@ import { Component } from '@angular/core';
     <td  >
       {{customer.date}}
     </td>
+    <button>
+      change
+    </button>
   </tr>  
 
   </tbody>
@@ -63,3 +68,4 @@ const CUSTOMERS: Customer[] = [
   {suma: 19, name: 'Magma', status: 'accepted', date: 2016},
   {suma: 20, name: 'Tornado', status: 'accepted', date: 2016}
 ]
+

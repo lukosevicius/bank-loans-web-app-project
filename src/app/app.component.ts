@@ -20,22 +20,23 @@ import {CUSTOMERS} from "./mock-data";
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let customer of Customers" (click) = "onSelect(customer)">
-    <td  >
-      {{customer.loan}}
-    </td>    
-    <td  >
-      {{customer.name}}
-    </td>    
-    <td  >
-      {{customer.status}}
-    </td>    
-    <td  >  
-      {{customer.date}}
-    </td>
-
+  <tr *ngFor="let customer of Customers" 
+    [class.selected]="customer === selectedCustomer" 
+    (click) = "onSelect(customer)">
+      <td  >
+        €{{customer.loan}}
+      </td>    
+      <td  >
+        {{customer.name}}
+      </td>    
+      <td  >
+        {{customer.status}}
+      </td>    
+      <td  >  
+        {{customer.date}}
+      </td>
   </tr>  
-
+  
   </tbody>
 </table>
 </div>

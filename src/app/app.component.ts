@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 // import {Customer} from './customer';
-// import {CUSTOMERS} from "./mock-data";
+ import {CUSTOMERS} from "./mock-data";
 
 @Component({
   selector: 'app-root',
@@ -15,14 +15,14 @@ import { Component } from '@angular/core';
     <th>Vartotojas</th>
     <th>Statusas</th>
     <th>Data</th>
-    <th>Change status</th>
+    <th>Pakeisti statusa</th>
     
   </tr>
   </thead>
   <tbody>
   <tr *ngFor="let customer of Customers">
     <td  >
-      {{customer.suma}}
+      {{customer.loan}}
     </td>    
     <td  >
       {{customer.name}}
@@ -34,7 +34,7 @@ import { Component } from '@angular/core';
       {{customer.date}}
     </td>
     <button>
-      change
+      Pakeisti statusa
     </button>
   </tr>  
 
@@ -42,30 +42,28 @@ import { Component } from '@angular/core';
 </table>
 </div>
 
+<h1>Kliento duomenys:</h1>
+<h2>{{klientas.vardas}}</h2>
+<div><label>Suma: </label>{{klientas.suma}}</div>
+ <div>
+    <label>Suma: </label>
+    <input [(ngModel)]="klientas.suma" placeholder="accepted">
+</div>
+
+
 `,
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   Customers = CUSTOMERS;
+  klientas : Klientas = {
+    suma: 3000,
+    vardas: "Tomas Martinkėnas"
+  }
 }
 
-export class Customer {
-  suma: number;
-  name: string;
-  status: string;
-  date: number;
+export class Klientas {
+  suma : number;
+  vardas : String;
 }
-
-const CUSTOMERS: Customer[] = [
-  {suma: 11, name: 'Mr. Nice', status: 'accepted', date: 2017},
-  {suma: 12, name: 'Narco', status: 'accepted', date: 2016},
-  {suma: 13, name: 'Bombasto', status: 'accepted', date: 2016},
-  {suma: 14, name: 'Celeritas', status: 'accepted', date: 2016},
-  {suma: 15, name: 'Magneta', status: 'accepted', date: 2016},
-  {suma: 16, name: 'RubberMan', status: 'accepted', date: 2016},
-  {suma: 17, name: 'Dynama', status: 'accepted', date: 2016},
-  {suma: 18, name: 'Dr IQ', status: 'accepted', date: 2016},
-  {suma: 19, name: 'Magma', status: 'accepted', date: 2016},
-  {suma: 20, name: 'Tornado', status: 'accepted', date: 2016}
-]
 

@@ -1,6 +1,6 @@
 export class Customer {
-  suma: number;
-  customer: string;
+  loan: number;
+  name: string;
   status: string;
   date: number;
 }

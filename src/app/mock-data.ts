@@ -1,14 +1,14 @@
 import {Customer} from "./customer";
 
 export const CUSTOMERS: Customer[] = [
-  {suma: 11, customer: 'Mr. Nice', status: 'accepted', date: 2017},
-  {suma: 12, customer: 'Narco', status: 'accepted', date: 2016},
-  {suma: 13, customer: 'Bombasto', status: 'accepted', date: 2016},
-  {suma: 14, customer: 'Celeritas', status: 'accepted', date: 2016},
-  {suma: 15, customer: 'Magneta', status: 'accepted', date: 2016},
-  {suma: 16, customer: 'RubberMan', status: 'accepted', date: 2016},
-  {suma: 17, customer: 'Dynama', status: 'accepted', date: 2016},
-  {suma: 18, customer: 'Dr IQ', status: 'accepted', date: 2016},
-  {suma: 19, customer: 'Magma', status: 'accepted', date: 2016},
-  {suma: 20, customer: 'Tornado', status: 'accepted', date: 2016}
+  {loan: 11, name: 'Mr. Nice', status: 'accepted', date: 2017},
+  {loan: 12, name: 'Narco', status: 'accepted', date: 2016},
+  {loan: 13, name: 'Bombasto', status: 'accepted', date: 2016},
+  {loan: 14, name: 'Celeritas', status: 'accepted', date: 2016},
+  {loan: 15, name: 'Magneta', status: 'accepted', date: 2016},
+  {loan: 16, name: 'RubberMan', status: 'accepted', date: 2016},
+  {loan: 17, name: 'Dynama', status: 'accepted', date: 2016},
+  {loan: 18, name: 'Dr IQ', status: 'accepted', date: 2016},
+  {loan: 19, name: 'Magma', status: 'accepted', date: 2016},
+  {loan: 20, name: 'Tornado', status: 'accepted', date: 2016}
 ];

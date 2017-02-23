@@ -42,20 +42,7 @@ import {CUSTOMERS} from "./mock-data";
 </div>
 
 
-<div *ngIf="selectedCustomer">
-  <h1>Kliento duomenys:</h1>
-  <h2>{{selectedCustomer.name}}</h2>
-  <div><label>Suma: </label> €{{selectedCustomer.loan}}</div>
-  <div><label>Grynosios mėnesio pajamos: </label> €{{selectedCustomer.income}}</div>
-  <div><label>Statusas: </label>{{selectedCustomer.status}}</div>
-  
-  <button (click)="acceptLoan()">
-    Patvirtinti
-  </button>
-  <button (click)="declineLoan()">
-    Atmesti
-  </button>
-</div>
+<customer-details [customer]="selectedCustomer"></customer-details>
 
 
 

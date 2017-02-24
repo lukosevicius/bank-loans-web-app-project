@@ -5,10 +5,10 @@ import {HttpModule} from '@angular/http';
 import {RouterModule} from "@angular/router";
 
 import {AppComponent} from './app.component';
-import {CustomerDetailsComponent} from './customer-details.component';
-import {CustomerComponent} from "./customer.component";
-import {CustomerService} from "./customer.service";
-import {DraftsComponent} from "./drafts.component";
+import {CustomerDetailsComponent} from './customers/customer-details.component';
+import {CustomerComponent} from "./customers/customer.component";
+import {CustomerService} from "./customers/customer.service";
+import {DraftsComponent} from "./customers/drafts.component";
 
 
 @NgModule({
@@ -23,6 +23,10 @@ import {DraftsComponent} from "./drafts.component";
     FormsModule,
     HttpModule,
     RouterModule.forRoot([
+      {
+        path: ' ',
+        component: AppComponent
+      },
       {
         path: 'drafts',
         component: DraftsComponent

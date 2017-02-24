@@ -1,6 +1,8 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Customer} from './customer';
-import {CUSTOMERS} from "./mock-data";
+import {CustomerService} from "./customer.service";
+
+
 
 @Component({
   selector: 'app-root',
@@ -20,7 +22,7 @@ import {CUSTOMERS} from "./mock-data";
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let customer of Customers" 
+  <tr *ngFor="let customer of customers" 
     [class.selected]="customer === selectedCustomer" 
     (click) = "onSelect(customer)">
       <td  >
@@ -52,13 +54,19 @@ import {CUSTOMERS} from "./mock-data";
 </div>
 
 `,
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [CustomerService]
 })
-export class AppComponent {
-  Customers = CUSTOMERS;
-
+export class AppComponent implements OnInit{
+  // Customers = CUSTOMERS;
+  customers: Customer[];
   selectedCustomer: Customer;
 
+  constructor(private customerService : CustomerService){}
+
+  getCustomers(): void{
+    this.customerService.getCustomers().then(customers => this.customers = customers);
+  }
 
   acceptLoan() {
     this.selectedCustomer.status = "Patvirtina"
@@ -70,6 +78,10 @@ export class AppComponent {
 
   onSelect(customer: Customer): void {
     this.selectedCustomer = customer;
+  }
+
+  ngOnInit(): void{
+    this.getCustomers();
   }
 
 }

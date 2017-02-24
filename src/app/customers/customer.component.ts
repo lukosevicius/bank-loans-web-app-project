@@ -17,9 +17,23 @@ export class CustomerComponent implements OnInit{
 
   constructor(private customerService : CustomerService){}
 
-  getCustomers(): void{
-    this.customerService.getCustomers().then(customers => this.customers = customers);
-  }
+  // getCustomers(): void{
+  //   this.customerService.getCustomers().then(customers => this.customers = customers);
+  // }
+
+  error: any;
+
+
+  getCustomers() {
+    this.customerService.getCustomers()
+      .then(customers => {
+        this.customers = customers;
+        console.log('success');
+      }).catch(error => {
+      this.error = error;
+      console.log('error :(((');
+    });
+  };
 
 
   onSelect(customer: Customer): void {

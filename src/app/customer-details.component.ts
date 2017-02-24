@@ -22,4 +22,14 @@ import { Customer} from "./customer"
 export class CustomerDetailsComponent {
   @Input()
   customer: Customer;
+
+  acceptLoan() {
+    this.customer.status = "Patvirtina"
+  }
+
+  declineLoan() {
+    this.customer.status = "Atmesta"
+  }
 }
+
+

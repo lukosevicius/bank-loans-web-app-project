@@ -9,7 +9,7 @@ import {CustomerDetailsComponent} from './customers/customer-details.component';
 import {CustomerComponent} from "./customers/customer.component";
 import {CustomerService} from "./customers/customer.service";
 import {DraftsComponent} from "./customers/drafts.component";
-import {AnketaComponent} from "./anketa/anketa.component";
+import {AnketaComponent} from "./form/anketa.component";
 import {SliderComponent} from "./slider/slider.component";
 
 
@@ -40,7 +40,7 @@ import {SliderComponent} from "./slider/slider.component";
         component: CustomerComponent
       },
       {
-        path: 'anketa',
+        path: 'form',
         component: AnketaComponent
       } ,
       {

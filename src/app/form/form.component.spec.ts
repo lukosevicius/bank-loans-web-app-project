@@ -3,9 +3,9 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { AnketaComponent } from './anketa.component';
+import { AnketaComponent } from './form.component';
 
-describe('AnketaComponent', () => {
+describe('FomrComponent', () => {
   let component: AnketaComponent;
   let fixture: ComponentFixture<AnketaComponent>;
 

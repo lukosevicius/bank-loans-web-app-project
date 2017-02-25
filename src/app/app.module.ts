@@ -9,7 +9,7 @@ import {CustomerDetailsComponent} from './customers/customer-details.component';
 import {CustomerComponent} from "./customers/customer.component";
 import {CustomerService} from "./customers/customer.service";
 import {DraftsComponent} from "./customers/drafts.component";
-import {AnketaComponent} from "./form/anketa.component";
+import {FormComponent} from "./form/form.component";
 import {SliderComponent} from "./slider/slider.component";
 
 
@@ -19,7 +19,7 @@ import {SliderComponent} from "./slider/slider.component";
     CustomerDetailsComponent,
     CustomerComponent,
     DraftsComponent,
-    AnketaComponent,
+    FormComponent,
     SliderComponent
   ],
   imports: [
@@ -41,7 +41,7 @@ import {SliderComponent} from "./slider/slider.component";
       },
       {
         path: 'form',
-        component: AnketaComponent
+        component: FormComponent
       } ,
       {
         path: 'slider',

@@ -9,6 +9,8 @@ import {CustomerDetailsComponent} from './customers/customer-details.component';
 import {CustomerComponent} from "./customers/customer.component";
 import {CustomerService} from "./customers/customer.service";
 import {DraftsComponent} from "./customers/drafts.component";
+import {AnketaComponent} from "./anketa/anketa.component";
+import {SliderComponent} from "./slider/slider.component";
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import {DraftsComponent} from "./customers/drafts.component";
     AppComponent,
     CustomerDetailsComponent,
     CustomerComponent,
-    DraftsComponent
+    DraftsComponent,
+    AnketaComponent,
+    SliderComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +38,14 @@ import {DraftsComponent} from "./customers/drafts.component";
       {
         path: 'admin',
         component: CustomerComponent
+      },
+      {
+        path: 'anketa',
+        component: AnketaComponent
+      } ,
+      {
+        path: 'slider',
+        component: SliderComponent
       }
     ])
   ],

@@ -15,6 +15,8 @@ export class CustomerComponent implements OnInit{
   customers: Customer[];
   selectedCustomer: Customer;
 
+
+
   constructor(private customerService : CustomerService){}
 
   // getCustomers(): void{

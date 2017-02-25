@@ -1,0 +1,47 @@
+<div class="panel panel-default">
+    <div class="panel-heading"><h1 style="text-align:center">Vartojimo paskolos</h1></div>
+
+
+  <table class="table table-striped" >
+    <thead class="thead-inverse">
+    <tr>
+      <th >Suma</th>
+      <th>Vartotojas</th>
+      <th>Statusas</th>
+      <th>Data</th>
+
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let customer of customers"
+        [class.selected]="customer === selectedCustomer"
+        (click) = "onSelect(customer)">
+      <td  >
+        €{{customer.loan}}
+      </td>
+      <td  >
+        {{customer.name}}
+      </td>
+      <td  >
+        {{customer.status}}
+      </td>
+      <td  >
+        {{customer.date}}
+      </td>
+    </tr>
+
+    </tbody>
+  </table>
+</div>
+
+
+<customer-details [customer]="selectedCustomer"></customer-details>
+
+
+
+
+<hr>
+<div class="panel panel-default">
+  <div class="panel-footer"><h1 style="text-align:center"></h1></div>
+</div>

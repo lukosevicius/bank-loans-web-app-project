@@ -1,0 +1,12 @@
+.panel > .panel-heading {
+  background-image: none;
+  background-color: orange;
+  color: white;
+}
+
+
+
+.selected {
+  background-color: #CFD8DC !important;
+  color: white;
+}

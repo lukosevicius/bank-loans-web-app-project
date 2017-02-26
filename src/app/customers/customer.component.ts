@@ -1,10 +1,13 @@
 import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+
 import {Customer} from './customer';
 import {CustomerService} from "./customer.service";
 
 
 
 @Component({
+  moduleId: module.id,
   selector: 'my-customers',
   templateUrl: './customer.component.html',
   styleUrls: ['./customer.component.css'],
@@ -15,16 +18,19 @@ export class CustomerComponent implements OnInit{
   // Customers = CUSTOMERS;
   customers: Customer[];
   selectedCustomer: Customer;
+  error: any;
 
 
-
-  constructor(private customerService : CustomerService){}
+  constructor(private customerService : CustomerService, private router: Router){}
 
   // getCustomers(): void{
   //   this.customerService.getCustomers().then(customers => this.customers = customers);
   // }
 
-  error: any;
+  gotoDetail(): void {
+    this.router.navigate(["/detail", this.selectedCustomer.id]);
+  }
+
 
 
   static checkIfNoDraft(customer) {

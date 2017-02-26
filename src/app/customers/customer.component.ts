@@ -9,6 +9,7 @@ import {CustomerService} from "./customer.service";
   templateUrl: './customer.component.html',
   styleUrls: ['./customer.component.css'],
   // providers: [CustomerService]
+  // providerius perkelem i app.module
 })
 export class CustomerComponent implements OnInit{
   // Customers = CUSTOMERS;

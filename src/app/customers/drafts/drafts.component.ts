@@ -23,4 +23,6 @@ export class DraftsComponent {
     this.customerService.getCustomers()
         .then(customers => this.customers = customers.filter(checkIfHasDraft));
   }
+
+
 }

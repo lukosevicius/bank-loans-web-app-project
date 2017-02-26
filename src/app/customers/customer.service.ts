@@ -30,6 +30,13 @@ export class CustomerService {
     console.error('An error occurred', error); // for demo purposes only
     return Promise.reject(error.message || error);
   }
+
+
+  getCustomer(id: number): Promise<Customer> {
+    return this.getCustomers()
+        .then(customers => customers.find(customer => customer.id === id));
+  }
+
 }
 
 

@@ -2,15 +2,16 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
-import {RouterModule} from "@angular/router";
 
 import {AppComponent} from './app.component';
-import {CustomerDetailsComponent} from './customers/customer-details.component';
+import {CustomerDetailsComponent} from './customers/customer-details/customer-details.component';
 import {CustomerComponent} from "./customers/customer.component";
 import {CustomerService} from "./customers/customer.service";
 import {DraftsComponent} from "./customers/drafts/drafts.component";
 import {FormComponent} from "./form/form.component";
 import {SliderComponent} from "./slider/slider.component";
+
+import { AppRoutingModule }     from './app-routing.module';
 
 
 @NgModule({
@@ -26,33 +27,7 @@ import {SliderComponent} from "./slider/slider.component";
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot([
-      {
-        path: '',
-        redirectTo: '/drafts',
-        pathMatch: 'full'
-      },
-      {
-        path: ' ',
-        component: AppComponent
-      },
-      {
-        path: 'drafts',
-        component: DraftsComponent
-      },
-      {
-        path: 'admin',
-        component: CustomerComponent
-      },
-      {
-        path: 'form',
-        component: FormComponent
-      } ,
-      {
-        path: 'slider',
-        component: SliderComponent
-      }
-    ])
+    AppRoutingModule
   ],
   providers: [CustomerService],
   bootstrap: [AppComponent]

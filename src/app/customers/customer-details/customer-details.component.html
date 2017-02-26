@@ -1,0 +1,24 @@
+<div *ngIf="customer">
+    <h1>Kliento duomenys:</h1>
+    <h2>{{customer.name}}</h2>
+    <div><label>Suma: </label> €{{customer.loan}}</div>
+    <div><label>Grynosios mėnesio pajamos: </label> €{{customer.income}}</div>
+    <div><label>Statusas: </label>{{customer.status}}</div>
+
+    <div *ngIf="customer.draft == false">
+        <button (click)="acceptLoan()">
+            Patvirtinti
+        </button>
+        <button (click)="declineLoan()">
+            Atmesti
+        </button>
+    </div>
+
+    <hr>
+
+    <div *ngIf="customer.draft == true">
+        <button (click)="goBack()">Back</button>
+    </div>
+
+</div>
+

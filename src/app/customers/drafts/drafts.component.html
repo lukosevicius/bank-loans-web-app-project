@@ -1,10 +1,9 @@
-'<h3>Uncompleted drafts:</h3>'
+'<h3>Customers who have uncompleted drafts:</h3>'
 
-<h3>Top Customers</h3>
 <div class="grid grid-pad">
-    <div *ngFor="let customer of customers" class="col-1-4">
+    <a *ngFor="let customer of customers" [routerLink]="['/detail', customer.id]" class="col-1-4">
         <div class="module customer">
             <h4>{{customer.name}} {{customer.status}}</h4>
         </div>
-    </div>
+    </a>
 </div>

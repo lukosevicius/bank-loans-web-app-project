@@ -4,4 +4,5 @@ export class Customer {
   name: string;
   status: string;
   date: number;
+  draft: boolean;
 }

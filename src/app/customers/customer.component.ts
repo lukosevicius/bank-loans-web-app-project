@@ -8,7 +8,7 @@ import {CustomerService} from "./customer.service";
   selector: 'my-customers',
   templateUrl: './customer.component.html',
   styleUrls: ['./customer.component.css'],
-  providers: [CustomerService]
+  // providers: [CustomerService]
 })
 export class CustomerComponent implements OnInit{
   // Customers = CUSTOMERS;
@@ -26,10 +26,15 @@ export class CustomerComponent implements OnInit{
   error: any;
 
 
+  static checkIfNoDraft(customer) {
+  return customer.draft == false;
+}
+
   getCustomers() {
+
     this.customerService.getCustomers()
       .then(customers => {
-        this.customers = customers;
+        this.customers = customers.filter(CustomerComponent.checkIfNoDraft);
         console.log('success');
       }).catch(error => {
       this.error = error;
@@ -43,7 +48,11 @@ export class CustomerComponent implements OnInit{
   }
 
   ngOnInit(): void{
+
+
     this.getCustomers();
+
+    //this.customers.filter(checkIfNoDraft);
   }
 
 }

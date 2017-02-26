@@ -17,11 +17,11 @@ export class CustomerDetailsComponent implements OnInit {
   customer: Customer;
 
   acceptLoan() {
-    this.customer.status = "Patvirtina"
+    this.customer.status = "patvirtina"
   }
 
   declineLoan() {
-    this.customer.status = "Atmesta"
+    this.customer.status = "atmesta"
   }
 
   constructor(

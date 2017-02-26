@@ -5,7 +5,7 @@ import {HttpModule} from '@angular/http';
 
 import {AppComponent} from './app.component';
 import {CustomerDetailsComponent} from './customers/customer-details/customer-details.component';
-import {CustomerComponent} from "./customers/customer.component";
+import {CustomerComponent} from "./customers/customer-table/customer-table.component";
 import {CustomerService} from "./customers/customer.service";
 import {DraftsComponent} from "./customers/drafts/drafts.component";
 import {FormComponent} from "./form/form.component";

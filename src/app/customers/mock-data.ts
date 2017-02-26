@@ -11,6 +11,6 @@ export const CUSTOMERS: Customer[] = [
   {id: 8, loan: 1800, income: 2200, name: 'Vaida Kisieliūtė', status: 'nepatikrinta', date: 2016, draft:false},
   {id: 9, loan: 1900, income: 1200, name: 'John Jones', status: 'atmesta', date: 2016, draft:false},
   {id: 10, loan: 2000, income: 5000, name: 'Mantas Lukoševičius', status: 'patvirtina', date: 2016, draft:false},
-  {id: 11, loan: 0, income: 2000, name: 'No name', status: '', date: 2016, draft: true},
-  {id: 12, loan: 0, income: 5000, name: 'Kazkas', status: '', date: 2016, draft: true}
+  {id: 11, loan: 0, income: 2000, name: 'Jonas Jonaitis', status: '', date: 2016, draft: true},
+  {id: 12, loan: 0, income: 5000, name: 'Conor McGregor', status: '', date: 2016, draft: true}
 ];

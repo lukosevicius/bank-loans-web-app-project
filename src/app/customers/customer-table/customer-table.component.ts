@@ -1,16 +1,16 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 
-import {Customer} from './customer';
-import {CustomerService} from "./customer.service";
+import {Customer} from '../customer';
+import {CustomerService} from "../customer.service";
 
 
 
 @Component({
   moduleId: module.id,
   selector: 'my-customers',
-  templateUrl: './customer.component.html',
-  styleUrls: ['./customer.component.css'],
+  templateUrl: 'customer-table.component.html',
+  styleUrls: ['customer-table.component.css'],
   // providers: [CustomerService]
   // providerius perkelem i app.module
 })

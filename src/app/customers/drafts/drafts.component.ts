@@ -5,7 +5,8 @@ import {CustomerService} from "../customer.service"
 
 @Component({
   selector: 'uncompleted-drafts ',
-  templateUrl: './drafts.component.html'
+  templateUrl: './drafts.component.html',
+  styleUrls: ['drafts.component.css'],
 })
 export class DraftsComponent {
 

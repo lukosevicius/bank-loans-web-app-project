@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-anketa',
-  templateUrl: './anketa.component.html',
-  styleUrls: ['./anketa.component.css']
+  templateUrl: 'form.component.html',
+  styleUrls: ['form.component.css']
 })
-export class AnketaComponent implements OnInit {
+export class FormComponent implements OnInit {
 
   constructor() { }
 

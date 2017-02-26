@@ -35,13 +35,26 @@
   </table>
 </div>
 
+<div *ngIf = "selectedCustomer">
+  <h2>
+    {{selectedCustomer.name | uppercase}}, statusas: {{selectedCustomer.status}}
+  </h2>
+  <button (click)="gotoDetail()">Peržiūrėti</button>
+</div>
 
-<customer-details [customer]="selectedCustomer"></customer-details>
+
+<!--<customer-details [customer]="selectedCustomer"></customer-details>-->
 
 
+<div *ngIf="selectedHero">
+  <h2>
+    {{selectedHero.name | uppercase}} is my hero
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>
 
 
-<hr>
+<br>
 <div class="panel panel-default">
   <div class="panel-footer"><h1 style="text-align:center"></h1></div>
 </div>

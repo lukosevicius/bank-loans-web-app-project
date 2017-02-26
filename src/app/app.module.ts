@@ -2,15 +2,16 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
-import {RouterModule} from "@angular/router";
 
 import {AppComponent} from './app.component';
-import {CustomerDetailsComponent} from './customers/customer-details.component';
-import {CustomerComponent} from "./customers/customer.component";
+import {CustomerDetailsComponent} from './customers/customer-details/customer-details.component';
+import {CustomerComponent} from "./customers/customer-table/customer-table.component";
 import {CustomerService} from "./customers/customer.service";
-import {DraftsComponent} from "./customers/drafts.component";
-import {AnketaComponent} from "./form/anketa.component";
+import {DraftsComponent} from "./customers/drafts/drafts.component";
+import {FormComponent} from "./form/form.component";
 import {SliderComponent} from "./slider/slider.component";
+
+import { AppRoutingModule }     from './app-routing.module';
 
 
 @NgModule({
@@ -19,35 +20,14 @@ import {SliderComponent} from "./slider/slider.component";
     CustomerDetailsComponent,
     CustomerComponent,
     DraftsComponent,
-    AnketaComponent,
+    FormComponent,
     SliderComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot([
-      {
-        path: ' ',
-        component: AppComponent
-      },
-      {
-        path: 'drafts',
-        component: DraftsComponent
-      },
-      {
-        path: 'admin',
-        component: CustomerComponent
-      },
-      {
-        path: 'form',
-        component: AnketaComponent
-      } ,
-      {
-        path: 'slider',
-        component: SliderComponent
-      }
-    ])
+    AppRoutingModule
   ],
   providers: [CustomerService],
   bootstrap: [AppComponent]

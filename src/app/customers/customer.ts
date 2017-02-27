@@ -3,6 +3,7 @@ export class Customer {
   loan: number;
   income: number;
   name: string;
+  surname: string;
   status: string;
   date: number;
   draft: boolean;

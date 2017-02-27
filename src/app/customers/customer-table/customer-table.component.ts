@@ -33,6 +33,8 @@ export class CustomerComponent implements OnInit{
 
 
 
+
+
   static checkIfNoDraft(customer) {
   return customer.draft == false;
 }

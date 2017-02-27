@@ -1,0 +1,6 @@
+<div>
+    <label>Customer name:</label> <input #customerName />
+    <button (click)="add(customerName.value); customerName.value=''">
+        Add
+    </button>
+</div>

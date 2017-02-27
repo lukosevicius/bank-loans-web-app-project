@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import {CUSTOMERS} from "./mock-data";
+//import {CUSTOMERS} from "./mock-data";
 import {Customer} from "./customer";
-import { Http } from '@angular/http';
+import {Http, Headers} from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -13,12 +13,12 @@ export class CustomerService {
   constructor(private http: Http) { }
 
   //DUOMENU IMIMAS IS mock-data.ts
-  getCustomers(): Promise<Customer[]> {
-    return Promise.resolve(CUSTOMERS);
-  }
+  // getCustomers(): Promise<Customer[]> {
+  //   return Promise.resolve(CUSTOMERS);
+  // }
 
 
-  //DUOMENU IMIMAS IS DUOMENU BAZES
+  //DUOMENU IMIMAS IS LOCAL DUOMENU BAZES
   // getCustomers(): Promise<Customer[]> {
   //   return this.http.get("http://localhost:8080/customers")
   //     .toPromise()
@@ -26,15 +26,49 @@ export class CustomerService {
   //     .catch(this.handleError);
   // }
 
+  private customersUrl = 'api/customers';
+  //private customersUrl = 'localhost:8080/loan/get/all/';
+
+
+  getCustomers(): Promise<Customer[]> {
+    return this.http.get(this.customersUrl)
+        .toPromise()
+        .then(response => response.json().data as Customer[])
+        .catch(this.handleError);
+  }
+
+
   private handleError(error: any): Promise<any> {
-    console.error('An error occurred', error); // for demo purposes only
+    console.error('An error occurred', error);
     return Promise.reject(error.message || error);
   }
 
 
   getCustomer(id: number): Promise<Customer> {
-    return this.getCustomers()
-        .then(customers => customers.find(customer => customer.id === id));
+    const url = `${this.customersUrl}/${id}`;
+    return this.http.get(url)
+        .toPromise()
+        .then(response => response.json().data as Customer)
+        .catch(this.handleError);
+  }
+
+  private headers = new Headers({'Content-Type': 'application/json'});
+
+  update(customer: Customer): Promise<Customer> {
+    const url = `${this.customersUrl}/${customer.id}`;
+    return this.http
+        .put(url, JSON.stringify(customer), {headers: this.headers})
+        .toPromise()
+        .then(() => customer)
+        .catch(this.handleError);
+  }
+
+  create(name: string): Promise<Customer> {
+    return this.http
+        .post(this.customersUrl, JSON.stringify({name: name}), {headers: this.headers})
+        .toPromise()
+        .then(res => res.json().data)
+        .catch(this.handleError);
   }
 
 }

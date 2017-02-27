@@ -43,6 +43,12 @@ export class CustomerDetailsComponent implements OnInit {
     this.location.back();
   }
 
+  save(): void {
+    this.customerService.update(this.customer)
+        .then(() => this.goBack());
+  }
+
+
 
 }
 

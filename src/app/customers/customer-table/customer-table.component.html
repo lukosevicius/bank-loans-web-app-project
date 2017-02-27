@@ -21,7 +21,7 @@
         €{{customer.loan}}
       </td>
       <td  >
-        {{customer.name}}
+        {{customer.name}} {{customer.surname}}
       </td>
       <td  >
         {{customer.status}}
@@ -46,7 +46,7 @@
 <!--<customer-details [customer]="selectedCustomer"></customer-details>-->
 
 
-<div *ngIf="selectedHero">
+<div *ngIf="selectedHero" >
   <h2>
     {{selectedHero.name | uppercase}} is my hero
   </h2>
@@ -54,7 +54,7 @@
 </div>
 
 
-<br>
-<div class="panel panel-default">
-  <div class="panel-footer"><h1 style="text-align:center"></h1></div>
-</div>
+<!--<br>-->
+<!--<div class="panel panel-default" >-->
+<!--<div class="panel-footer"><h1 style="text-align:center"></h1></div>-->
+<!--</div>-->

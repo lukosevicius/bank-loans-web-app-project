@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 //import {CUSTOMERS} from "./mock-data";
 import {Customer} from "./customer";
-import { Http } from '@angular/http';
+import {Http, Headers} from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -27,6 +27,7 @@ export class CustomerService {
   // }
 
   private customersUrl = 'api/customers';
+  //private customersUrl = 'localhost:8080/loan/get/all/';
 
 
   getCustomers(): Promise<Customer[]> {
@@ -44,8 +45,30 @@ export class CustomerService {
 
 
   getCustomer(id: number): Promise<Customer> {
-    return this.getCustomers()
-        .then(customers => customers.find(customer => customer.id === id));
+    const url = `${this.customersUrl}/${id}`;
+    return this.http.get(url)
+        .toPromise()
+        .then(response => response.json().data as Customer)
+        .catch(this.handleError);
+  }
+
+  private headers = new Headers({'Content-Type': 'application/json'});
+
+  update(customer: Customer): Promise<Customer> {
+    const url = `${this.customersUrl}/${customer.id}`;
+    return this.http
+        .put(url, JSON.stringify(customer), {headers: this.headers})
+        .toPromise()
+        .then(() => customer)
+        .catch(this.handleError);
+  }
+
+  create(name: string): Promise<Customer> {
+    return this.http
+        .post(this.customersUrl, JSON.stringify({name: name}), {headers: this.headers})
+        .toPromise()
+        .then(res => res.json().data)
+        .catch(this.handleError);
   }
 
 }

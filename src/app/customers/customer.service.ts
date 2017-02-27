@@ -54,7 +54,7 @@ export class CustomerService {
     const url = `${this.beanloanGetIDUrl}/${id}`;
     return this.http.get(url)
         .toPromise()
-        .then(response => response.json().data as Customer)
+        .then(response => response.json())
         .catch(this.handleError);
   }
 

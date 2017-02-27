@@ -6,5 +6,5 @@ export class Customer {
   surname: string;
   status: string;
   date: number;
-  draft: boolean;
+  // draft: boolean;
 }

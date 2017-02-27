@@ -31,7 +31,7 @@ import { InMemoryDataService }  from './in-memory-data.service';
     BrowserModule,
     FormsModule,
     HttpModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService),
+    //InMemoryWebApiModule.forRoot(InMemoryDataService),  IMA duomenis is in-memory-service ir neleidzia imt is remote db
     AppRoutingModule
   ],
   providers: [CustomerService],

@@ -35,19 +35,22 @@ export class CustomerComponent implements OnInit{
 
 
 
-  static checkIfNoDraft(customer) {
-  return customer.draft == false;
-}
+//   static checkIfNoDraft(customer) {
+//   return customer.draft == false;
+// }
+
+  // this.customers = customers.filter(CustomerComponent.checkIfNoDraft);
+
 
   getCustomers() {
 
     this.customerService.getCustomers()
       .then(customers => {
-        this.customers = customers.filter(CustomerComponent.checkIfNoDraft);
+        this.customers = customers;
         console.log('success');
       }).catch(error => {
       this.error = error;
-      console.log('error :(((');
+      console.log(error);
     });
   };
 

@@ -17,25 +17,31 @@ export class CustomerService {
   //   return Promise.resolve(CUSTOMERS);
   // }
 
-
-  //DUOMENU IMIMAS IS LOCAL DUOMENU BAZES
-  // getCustomers(): Promise<Customer[]> {
-  //   return this.http.get("http://localhost:8080/customers")
-  //     .toPromise()
-  //     .then(response => response.json())
-  //     .catch(this.handleError);
-  // }
-
   private customersUrl = 'api/customers';
-  //private customersUrl = 'localhost:8080/loan/get/all/';
+  private mydbUrl = 'http://localhost:8080/customers';
+  private beanloanUrl = 'http://localhost:8080/loan/get/all/';
+  private beanloanGetIDUrl = 'http://localhost:8080/loan';
 
 
+  // DUOMENU IMIMAS IS LOCAL DUOMENU BAZES
   getCustomers(): Promise<Customer[]> {
-    return this.http.get(this.customersUrl)
-        .toPromise()
-        .then(response => response.json().data as Customer[])
-        .catch(this.handleError);
+    return this.http.get(this.beanloanUrl)
+      .toPromise()
+      .then(response => response.json())
+      .catch(this.handleError);
   }
+
+
+
+  //private customersUrl = 'http://localhost:8080/loan/get/all/';
+
+
+  // getCustomers(): Promise<Customer[]> {
+  //   return this.http.get(this.customersUrl)
+  //       .toPromise()
+  //       .then(response => response.json().data as Customer[])
+  //       .catch(this.handleError);
+  // }
 
 
   private handleError(error: any): Promise<any> {
@@ -45,7 +51,7 @@ export class CustomerService {
 
 
   getCustomer(id: number): Promise<Customer> {
-    const url = `${this.customersUrl}/${id}`;
+    const url = `${this.beanloanGetIDUrl}/${id}`;
     return this.http.get(url)
         .toPromise()
         .then(response => response.json().data as Customer)

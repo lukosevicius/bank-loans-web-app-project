@@ -22,8 +22,8 @@ export class FormComponent implements OnInit {
     name = name.trim();
     if (!name) { return; }
     this.customerService.create(name)
-        .then(hero => {
-          this.customers.push(hero);
+        .then(customer => {
+          this.customers.push(customer);
           this.selectedCustomer = null;
         });
   }

@@ -5,7 +5,7 @@ import { DebugElement } from '@angular/core';
 
 import { AnketaComponent } from './form.component';
 
-describe('FomrComponent', () => {
+describe('FormComponent', () => {
   let component: AnketaComponent;
   let fixture: ComponentFixture<AnketaComponent>;
 

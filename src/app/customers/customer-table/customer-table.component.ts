@@ -7,7 +7,7 @@ import {CustomerService} from "../customer.service";
 
 
 @Component({
-  moduleId: module.id,
+  moduleId: 'module.id',
   selector: 'my-customers',
   templateUrl: 'customer-table.component.html',
   styleUrls: ['customer-table.component.css'],

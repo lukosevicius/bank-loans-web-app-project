@@ -18,18 +18,20 @@ export class FormComponent implements OnInit {
   ngOnInit() {
   }
 
-  add(name: string): void {
-    name = name.trim();
-    if (!name) { return; }
-    this.customerService.create(name)
-        .then(customer => {
-          this.customers.push(customer);
-          this.selectedCustomer = null;
-        });
-  }
+  // add(name: string): void {
+  //   name = name.trim();
+  //   if (!name) { return; }
+  //   this.customerService.create(name)
+  //       .then(customer => {
+  //         this.customers.push(customer);
+  //         this.selectedCustomer = null;
+  //       });
+  // }
 
   submitLoanApplication(name: string,  surname: string, personal_code: number, doc_type: string, doc_code: string, country: string, city: string, address: string, phone_number: number, email: string, salary: number, amount: number, term: number, payment_day: number ):void{
      console.log(name + surname + amount);
+
+  //  this.customerService.create(name,  surname, personal_code, doc_type, doc_code, country, city, address, phone_number, email, salary, amount, term, payment_day);
 
 
 

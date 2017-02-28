@@ -3,8 +3,8 @@ export class Customer {
   name: string;
   surname: string;
   personal_code: number;
-  doc_type: string;
-  doc_code: string;
+  doc_type: number;
+  doc_code: number;
   country: string;
   phone_number: number;
   email: string;

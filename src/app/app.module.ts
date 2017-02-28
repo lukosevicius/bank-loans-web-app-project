@@ -16,6 +16,8 @@ import { AppRoutingModule }     from './app-routing.module';
 // Imports for loading & configuring the in-memory web api
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
+import { LoanCodeComponent } from './loan-code/loan-code.component';
+import { CheckStatusComponent } from './customers/check-status/check-status.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { InMemoryDataService }  from './in-memory-data.service';
     CustomerComponent,
     DraftsComponent,
     FormComponent,
-    SliderComponent
+    SliderComponent,
+    LoanCodeComponent,
+    CheckStatusComponent
   ],
   imports: [
     BrowserModule,

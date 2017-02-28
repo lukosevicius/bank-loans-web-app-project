@@ -7,6 +7,7 @@ import { CustomerComponent }      from './customers/customer-table/customer-tabl
 import { CustomerDetailsComponent }  from './customers/customer-details/customer-details.component';
 import {FormComponent} from "./form/form.component";
 import {SliderComponent} from "./slider/slider.component";
+import {LoanCodeComponent} from "./loan-code/loan-code.component";
 
 const routes: Routes = [
     // {
@@ -33,6 +34,10 @@ const routes: Routes = [
     {
         path: 'slider',
         component: SliderComponent
+    },
+    {
+        path: 'loancode',
+        component: LoanCodeComponent
     }
 ];
 

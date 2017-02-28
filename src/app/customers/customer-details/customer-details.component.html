@@ -4,8 +4,8 @@
 
     <div><label>Vardas: </label> {{customer.name}}</div>
     <div><label>Pavardė: </label> {{customer.surname}}</div>
-    <div><label>Suma: </label> €{{customer.loan}}</div>
-    <div><label>Grynosios mėnesio pajamos: </label> €{{customer.income}}</div>
+    <div><label>Suma: </label> €{{customer.amount}}</div>
+    <div><label>Grynosios mėnesio pajamos: </label> €{{customer.salary}}</div>
     <div><label>Statusas: </label>{{customer.status}}</div>
 
     <div *ngIf="customer.draft == false">

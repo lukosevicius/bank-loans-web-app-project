@@ -33,7 +33,6 @@ export class CustomerService {
 
 
 
-  //private customersUrl = 'http://localhost:8080/loan/get/all/';
 
 
   // getCustomers(): Promise<Customer[]> {

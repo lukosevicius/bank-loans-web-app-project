@@ -18,7 +18,7 @@
         [class.selected]="customer === selectedCustomer"
         (click) = "onSelect(customer)">
       <td  >
-        €{{customer.loan}}
+        €{{customer.amount}}
       </td>
       <td  >
         {{customer.name}} {{customer.surname}}
@@ -27,7 +27,7 @@
         {{customer.status}}
       </td>
       <td  >
-        {{customer.date}}
+        <!--{{customer.date}}-->
       </td>
     </tr>
 

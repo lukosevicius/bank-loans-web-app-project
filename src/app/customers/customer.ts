@@ -1,7 +1,7 @@
 export class Customer {
   id: number;
-  loan: number;
-  income: number;
+  amount: number;
+  salary: number;
   name: string;
   surname: string;
   status: string;

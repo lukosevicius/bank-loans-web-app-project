@@ -28,6 +28,19 @@ export class FormComponent implements OnInit {
         });
   }
 
+  submitLoanApplication(name: string,  surname: string):void{
+     console.log(name + surname);
+
+
+    // if (!name||!surname||!docNumber||!amount||!personCode||!payYear||!payMonth||!payDay||!docType||!docNumber||!country||!address||!phoneNum1||email||salary){return;}
+    // else{
+    //   name=name.trim();
+    //   this.customerService.create(name,amount, salary,email, surname,personCode,docType,docNumber,phoneNum1,country,city,address, payYear, payMonth, payDay)
+    // }
+    //
+    //
+  }
+
 
 
 }

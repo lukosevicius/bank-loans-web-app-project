@@ -8,14 +8,14 @@
     <div><label>Grynosios mėnesio pajamos: </label> €{{customer.salary}}</div>
     <div><label>Statusas: </label>{{customer.status}}</div>
 
-    <div *ngIf="customer.draft == false">
+    <!--<div *ngIf="customer.draft == false">-->
         <button (click)="acceptLoan()">
             Patvirtinti
         </button>
         <button (click)="declineLoan()">
             Atmesti
         </button>
-    </div>
+    <!--</div>-->
 
     <br>
     <br>

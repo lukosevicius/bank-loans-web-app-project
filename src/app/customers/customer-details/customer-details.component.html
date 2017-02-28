@@ -1,5 +1,8 @@
 <body>
 <div *ngIf="customer">
+
+  <div class="member_info">
+    <div class="only_info">
     <h1>Kliento duomenys:</h1>
 
     <div><label>Vardas: </label> {{customer.name}}</div>
@@ -24,7 +27,8 @@
     <!--</div>-->
 
     <button (click)="save()">Save</button>
-
+    </div>
+  </div>
 </div>
 
 </body>

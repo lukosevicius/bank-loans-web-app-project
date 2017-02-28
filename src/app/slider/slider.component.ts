@@ -11,8 +11,7 @@ export class SliderComponent implements OnInit {
   isValid = false;
   result = 0;
   result1 = 0;
-  errors = "klaida";
-  isGood= false;
+  errors = false;
 
   constructor() {
 
@@ -28,12 +27,11 @@ export class SliderComponent implements OnInit {
     if (income1/income2 < 3.67) {
       this.result = (income1 * 0.16) / 0.524
       this.result1 = (this.result + income1) / 60
+      this.errors = false;
       return this.result, this.result1;
     }
     else
-      this.errors
-
-
+      this.errors = true;
   }
 }
 

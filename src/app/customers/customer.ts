@@ -14,6 +14,7 @@ export class Customer {
   payment_day: number;
   status: string;
   date: number;
+  loanCode: string;
 }
 
 

@@ -69,13 +69,37 @@ export class CustomerService {
   }
 
   create(name: string,  surname: string, personal_code: number, doc_type: string, doc_code: string, country: string, city: string, address: string, phone_number: number, email: string, salary: number, amount: number, term: number, payment_day: number): Promise<Customer> {
-    return this.http
-        .post(this.customersUrl, JSON.stringify({name: name}), {headers: this.headers})
-        .toPromise()
-        .then(res => res.json().data)
-        .catch(this.handleError);
-  }
+    //   return this.http
+    //       .post(this.customersUrl, JSON.stringify({name: name}), {headers: this.headers})
+    //       .toPromise()
+    //       .then(res => res.json().data)
+    //       .catch(this.handleError);
+    // }
+    console.log("cj suveike");
 
+    return this.http
+        .post("http://localhost:8080/loan/newjson", ({
+          name: name,
+          surname: surname,
+          personal_code: personal_code,
+          doc_type: doc_type,
+          doc_code: doc_code,
+          country: country,
+          city: city,
+          address: address,
+          phone_number: phone_number,
+          email: email,
+          salary: salary,
+          amount: amount,
+          term: term,
+          payment_day: payment_day
+        }), {headers: this.headers})
+        .toPromise()
+        // .then(res => res.json().data)
+        .catch(this.handleError);
+
+
+  }
 }
 
 

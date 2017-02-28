@@ -27,7 +27,8 @@
         {{customer.status}}
       </td>
       <td  >
-        <!--{{customer.date}}-->
+        {{customer.date |date:'MM/dd/yyyy'}}
+        <!--{{customer.date.toDateString()}}-->
       </td>
     </tr>
 

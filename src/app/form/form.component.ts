@@ -43,7 +43,7 @@ export class FormComponent implements OnInit {
     this.number = getRandomInt(100, 999).toString()+'-'+getRandomInt(100, 999).toString()+'-'+getRandomInt(100, 999).toString();
     console.log(this.number);
 
-    this.customerService.create(name,  surname, personal_code, doc_type, doc_code, country, city, address, phone_number, email, salary, amount, term, payment_day);
+    this.customerService.create(name, surname, personal_code, doc_type, doc_code, country, city, address, phone_number, email, salary, amount, term, payment_day);
 
     // function getRandomInt(min, max) {
     //   return Math.floor(Math.random() * (max - min + 1)) + min;

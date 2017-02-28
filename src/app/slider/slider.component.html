@@ -1,8 +1,8 @@
 <h4><b>Informacija apie jūsų pageidaujamą paskolą</b></h4>
 <label class="col-xs-2">Pageidaujama suma</label>
-<md-slider [(ngModel)]="income1" class="col-xs-8"
+<input type="range" [(ngModel)]="income1" class="col-xs-8"
            showTicks="true" max="20000" min="500" id="a1" step="1" thumbLabel="true">
-</md-slider>
+
 <input [(ngModel)]="income1" class="digits col-xs-1">
 <label class="col-xs-1">EUR</label>
 <label class="col-xs-5" style="text-align: right">Paskolą imsiu</label>
@@ -14,18 +14,16 @@
 <div *ngIf="ifAlone">
   <label class="col-xs-12"> </label>
   <label class="col-xs-3">Sutuoktino(bendraskolio)mėnesines pajamos</label>
-  <md-slider [(ngModel)]="income3" class="col-xs-7"
+  <input type="range" [(ngModel)]="income3" class="col-xs-7"
              showTicks="true" max="20000" id="a2" min="500" step="1" thumbLabel="true">
-  </md-slider>
   <input [(ngModel)]="income3" class="digits col-xs-1">
   <label class="col-xs-1">EUR/mėn</label>
 </div>
 <label style="color:grey" class="col-xs-12"><hr /></label>
 <h4 class="col-xs-12"><b>Informacija apie jūsų pajmas</b></h4>
 <label class="col-xs-3">Jūsų grynosios mėnesio pajamos</label>
-<md-slider [(ngModel)]="income2" class="col-xs-7"
+<input  type="range" [(ngModel)]="income2" class="col-xs-7"
            showTicks="true" max="8000" id="a3" min="245" step="1" thumbLabel="true">
-</md-slider>
 <input [(ngModel)]="income2" class="digits col-xs-1">
 <label class="col-xs-1">EUR/mėn</label>
 <div class="col-xs-12" style="text-align:right">

@@ -12,14 +12,14 @@
     <div><label>Kodas: </label>{{customer.loanCode}}</div>
 
 
-    <!--<div *ngIf="customer.draft == false">-->
+    <div *ngIf = "customer.status == 'Atmesta' || customer.status == 'Patvirtinta' || customer.status == 'Nepatikrinta'">
         <button (click)="acceptLoan()">
             Patvirtinti
         </button>
         <button (click)="declineLoan()">
             Atmesti
         </button>
-    <!--</div>-->
+    </div>
 
     <br>
     <br>

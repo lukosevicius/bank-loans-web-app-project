@@ -18,7 +18,7 @@ export class DraftsComponent {
 
   ngOnInit(): void {
     function checkIfHasDraft(customer) {
-      return customer.draft == true;
+      return customer.status == 'Nebaigta';
     }
 
     this.customerService.getCustomers()

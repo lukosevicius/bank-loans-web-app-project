@@ -4,7 +4,7 @@ import {Customer} from "../customers/customer";
 
 @Component({
   selector: 'app-anketa',
-  templateUrl: 'form-new.component.html',
+  templateUrl: 'form2.component.html',
   styleUrls: ['form.component.css']
 })
 export class FormComponent implements OnInit {

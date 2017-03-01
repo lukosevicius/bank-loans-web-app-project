@@ -30,11 +30,6 @@ export class CustomerComponent implements OnInit{
   gotoDetail(): void {
     this.router.navigate(["/detail", this.selectedCustomer.id]);
   }
-
-
-
-
-
 //   static checkIfNoDraft(customer) {
 //   return customer.draft == false;
 // }

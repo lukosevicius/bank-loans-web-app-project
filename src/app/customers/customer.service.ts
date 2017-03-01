@@ -73,7 +73,7 @@ export class CustomerService {
     private headers = new Headers({'Content-Type': 'application/json'});
 
 
-    create(name: string,  surname: string, personal_code: number, doc_type: string, doc_code: string, country: string, city: string, address: string, phone_number: number, email: string, salary: number, amount: number, term: number, payment_day: number): Promise<Customer> {
+    create(name: string,  surname: string, personal_code: number, doc_type: string, doc_code: string, country: string, city: string, address: string, phone_number: number, email: string, salary: number, amount: number, term: number, payment_day: number, loan_code: string): Promise<Customer> {
 
     console.log("cj suveike");
 
@@ -92,7 +92,8 @@ export class CustomerService {
           salary: salary,
           amount: amount,
           term: term,
-          payment_day: payment_day
+          payment_day: payment_day,
+            loan_code: loan_code
         }), {headers: this.headers})
         .toPromise()
         //.then(customer => res.json().data)

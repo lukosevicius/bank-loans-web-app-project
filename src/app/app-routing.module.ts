@@ -5,9 +5,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { DraftsComponent }   from './customers/drafts/drafts.component';
 import { CustomerComponent }      from './customers/customer-table/customer-table.component';
 import { CustomerDetailsComponent }  from './customers/customer-details/customer-details.component';
+import { CheckStatusComponent }  from './customers/check-status/check-status.component';
 import {FormComponent} from "./form/form.component";
 import {SliderComponent} from "./slider/slider.component";
-import {LoanCodeComponent} from "./loan-code/loan-code.component";
 
 const routes: Routes = [
     // {
@@ -36,8 +36,8 @@ const routes: Routes = [
         component: SliderComponent
     },
     {
-        path: 'loancode',
-        component: LoanCodeComponent
+        path: 'check',
+        component: CheckStatusComponent
     }
 ];
 

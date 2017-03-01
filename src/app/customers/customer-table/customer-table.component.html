@@ -16,17 +16,18 @@
     <tbody>
     <tr *ngFor="let customer of customers"
         [class.selected]="customer === selectedCustomer"
-        (click) = "onSelect(customer)">
-      <td  >
+        (click) = "onSelect(customer)"
+        >
+      <td  *ngIf = "customer.status == 'Atmesta' || customer.status == 'Patvirtinta' || customer.status == 'Nepatikrinta'">
         €{{customer.amount}}
       </td>
-      <td>
+      <td *ngIf = "customer.status == 'Atmesta' || customer.status == 'Patvirtinta' || customer.status == 'Nepatikrinta'">
         {{customer.name}} {{customer.surname}}
       </td>
-      <td  >
+      <td   *ngIf = "customer.status == 'Atmesta' || customer.status == 'Patvirtinta' || customer.status == 'Nepatikrinta'">
         {{customer.status}}
       </td>
-      <td  >
+      <td   *ngIf = "customer.status == 'Atmesta' || customer.status == 'Patvirtinta' || customer.status == 'Nepatikrinta'">
         {{customer.date |date:'MM/dd/yyyy'}}
         <!--{{customer.date.toDateString()}}-->
       </td>
